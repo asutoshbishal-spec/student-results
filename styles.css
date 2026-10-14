@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+#classAverage {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0066cc;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.form-container {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+form {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0052a3;
+}
+
+#resultsContainer {
+    margin-top: 30px;
+    width: 100%;
+}
+
+#resultsList {
+    list-style: none;
+}
+
+.student-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.student-card .name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.student-card .marks {
+    color: #666;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.student-card .status {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.student-card.passed .status {
+    color: #28a745;
+}
+
+.student-card.failed .status {
+    color: #dc3545;
+}
+
+#showPassedButton {
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Tablet styles */
+@media (min-width: 576px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    button {
+        width: auto;
+    }
+
+    #showPassedButton {
+        width: auto;
+    }
+}
+
+/* Desktop styles - side by side layout */
+@media (min-width: 768px) {
+    .main-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .form-container {
+        flex: 0 0 400px;
+        max-width: 400px;
+    }
+
+    #resultsContainer {
+        flex: 1;
+    }
+
+    form {
+        margin: 0;
+    }
+}
+
+/* Large desktop styles */
+@media (min-width: 992px) {
+    body {
+        padding: 30px;
+    }
+
+    .container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 360px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    .student-card {
+        padding: 12px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}

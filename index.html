@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Results</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Results</h1>
+        <p id="classAverage">Class Average: </p>
+        
+        <p>Welcome to the Student Results page. This system allows you to add student marks and view their performance. Use the form below to enter student information and track their academic progress.</p>
+        
+        <img src="https://via.placeholder.com/400x200?text=Student+Results+System" alt="Student Results Management System Dashboard">
+        
+        <a href="https://www.example.com">Visit Company Website</a>
+        
+        <div class="main-content">
+            <div class="form-container">
+                <form>
+                    <label for="studentName">Student Name:</label>
+                    <input type="text" id="studentName" name="studentName" required>
+                    
+                    <label for="marks">Marks:</label>
+                    <input type="number" id="marks" name="marks" required>
+                    
+                    <button type="button" id="addButton">Add</button>
+                </form>
+            </div>
+            
+            <div id="resultsContainer">
+                <h2>Results List</h2>
+                <ul id="resultsList"></ul>
+            </div>
+        </div>
+        
+        <button type="button" id="showPassedButton">Show passed</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
