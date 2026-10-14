@@ -135,7 +135,7 @@ button:hover {
 }
 
 .student-card .marks {
-    color: #66666615;
+    color: #666;
     margin-bottom: 5px;
     font-size: 16px;
 }
@@ -151,7 +151,7 @@ button:hover {
 }
 
 .student-card.failed .status {
-    color: #dc3545;
+    color: #fd7e14;
 }
 
 #showPassedButton {

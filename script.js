@@ -33,8 +33,20 @@ function displayStudents() {
     studentsToDisplay.forEach(student => {
         const card = document.createElement('li');
         card.className = 'student-card';
+        
+        const isPassed = student.marks > 50;
+        if (isPassed) {
+            card.classList.add('passed');
+        } else {
+            card.classList.add('failed');
+        }
+        
+        const statusText = isPassed ? 'passed' : 'needs improvement';
+        
         card.innerHTML = `
-            <strong>${student.name}</strong> — ${student.marks}
+            <div class="name">${student.name}</div>
+            <div class="marks">${student.marks}/100</div>
+            <div class="status">${statusText}</div>
         `;
         resultsList.appendChild(card);
     });
