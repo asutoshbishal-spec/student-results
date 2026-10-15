@@ -1,9 +1,9 @@
 const students = [
-    { id: "Akshay", name: "Akshay", marks: 75 },
-    { id: "vignesh", name: "Vignesh", marks: 42 },
-    { id: "shiva", name: "shiva", marks: 90 },
-    { id: "vaishnavi", name: "Vaishnavi", marks: 50 },
-    { id: "akka", name: "akka", marks: 35 }
+    { id: 1, name: "Akshay", marks: 75 },
+    { id: 2, name: "Vignesh", marks: 42 },
+    { id: 3, name: "shiva", marks: 90 },
+    { id: 4, name: "Vaishnavi", marks: 50 },
+    { id: 5, name: "akka", marks: 35 }
 ];
 
 let showPassedOnly = false;
@@ -15,10 +15,11 @@ function calculateClassAverage() {
     return average.toFixed(1);
 }
 
-// Function to update class average display
-function updateClassAverage() {
-    const averageElement = document.getElementById('classAverage');
-    averageElement.textContent = `Class Average: ${calculateClassAverage()}`;
+// Function to update results info display
+function updateResultsInfo() {
+    const infoElement = document.getElementById('resultsInfo');
+    const average = calculateClassAverage();
+    infoElement.textContent = `${students.length} students · Average: ${average}%`;
 }
 
 // Function to display students
@@ -41,12 +42,17 @@ function displayStudents() {
             card.classList.add('failed');
         }
         
-        const statusText = isPassed ? 'passed' : 'needs improvement';
+        const statusText = isPassed ? 'Passed' : 'Needs focus';
         
         card.innerHTML = `
-            <div class="name">${student.name}</div>
-            <div class="marks">${student.marks}/100</div>
-            <div class="status">${statusText}</div>
+            <div class="student-card-info">
+                <div class="name">${student.name}</div>
+                <div class="student-id">Student #${student.id}</div>
+            </div>
+            <div class="student-card-right">
+                <div class="marks">${student.marks}/100</div>
+                <div class="status">${statusText}</div>
+            </div>
         `;
         resultsList.appendChild(card);
     });
@@ -80,15 +86,15 @@ document.getElementById('addButton').addEventListener('click', function() {
     }
 
     // Add new student to array
-    const newId = name;
+    const newId = students.length + 1;
     students.push({
         id: newId,
         name: name,
         marks: marks
     });
 
-    // Update class average
-    updateClassAverage();
+    // Update results info
+    updateResultsInfo();
 
     // Refresh display
     displayStudents();
@@ -100,6 +106,6 @@ document.getElementById('addButton').addEventListener('click', function() {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
-    updateClassAverage();
+    updateResultsInfo();
     displayStudents();
 });
